@@ -38,4 +38,15 @@ router.get("/auth", validateToken, (req, res) => {
   res.json(req.user);
 });
 
+router.get("/basicinfo/:username", async (req, res) => {
+  const username = req.params.username;
+
+  const basicInfo = await Users.findOne({
+    where: {username: username},
+    attributes: {exclude: ['password']}
+  });
+
+  res.json(basicInfo);
+})
+
 module.exports = router;
