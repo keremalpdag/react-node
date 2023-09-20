@@ -54,13 +54,14 @@ function Home() {
               {value.postText}
             </div>
             <div className="footer">
-              {value.username}{" "}
+              <div onClick={() => {navigate(`/profile/${value.username}`)}}>
+              {value.username}
+              </div>
               <button
                 onClick={() => {
                   likeAPost(value.id);
                 }}
               >
-                {" "}
                 Like
               </button>
               <label> {value.Likes.length}</label>

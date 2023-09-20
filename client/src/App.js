@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link} from "react-router-dom";
 import Home from "./pages/Home";
 import CreatePost from "./pages/CreatePost";
 import Post from "./pages/Post";
@@ -62,7 +62,7 @@ function App() {
               )}
             </div>
             <div className="loggedInContainer">
-              <h1>{authState.username} </h1>
+              <h1><Link to={`/profile/${authState.username}`}>{authState.username}</Link></h1>
               {authState.status && <button onClick={logout}> Logout</button>}
             </div>
           </div>
