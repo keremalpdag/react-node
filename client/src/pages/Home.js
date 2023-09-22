@@ -44,7 +44,9 @@ function Home() {
       {listOfPosts.map((value, key) => {
         return (
           <div key={key} className="post">
-            <div className="title"> {value.title} </div>
+            <div className="title" onClick={() => {
+              navigate(`/post/${value.id}`);
+            }}> {value.title} </div>
             <div
               className="body"
               onClick={() => {
@@ -54,8 +56,8 @@ function Home() {
               {value.postText}
             </div>
             <div className="footer">
-              <div onClick={() => {navigate(`/profile/${value.username}`)}}>
-              {value.username}
+              <div onClick={() => { navigate(`/profile/${value.username}`) }}>
+                {value.username}
               </div>
               <button
                 onClick={() => {
